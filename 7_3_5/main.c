@@ -7,18 +7,21 @@ struct element
     struct element *next;
 };
 
-//funkcja dodatkowo ustawia listê jako pust¹
-struct element *wyczysc(struct element * lista)
+struct element* dodajw(struct element * lista, struct element *elem, int a)
 {
-    struct element *wsk = lista;
-    struct element * wsk2 = wsk;
-    while(wsk != NULL)
+    struct element *wsk =malloc(sizeof(struct element));
+    wsk->i=a;
+    if(elem==NULL)
     {
-        wsk= wsk->next;
-        free(wsk2);
-        wsk2 = wsk;
+        wsk->next=lista;
+        lista=wsk;
     }
-    return NULL;
+    else
+    {
+        wsk->next=elem->next;
+        elem->next=wsk;
+    }
+    return lista;
 }
 
 void wyswietlListeBezGlowy(struct element *lista)
@@ -31,7 +34,7 @@ void wyswietlListeBezGlowy(struct element *lista)
     struct element *wsk = lista;
     while (wsk != NULL)
     {
-        printf("%d\n", wsk->i);
+        printf("%d:%p\n", wsk->i, wsk);
         wsk = wsk->next;
     }
     printf("---\n");
@@ -47,8 +50,8 @@ int main()
     lista->next->next->i = 3;
     lista->next->next->next = NULL;
     wyswietlListeBezGlowy(lista);
-    lista = wyczysc(lista);
+    lista = dodajw(lista, NULL, -4);
     wyswietlListeBezGlowy(lista);
-    return 0;
+    lista = dodajw(lista, lista->next, 5);
+    wyswietlListeBezGlowy(lista);
 }
-
