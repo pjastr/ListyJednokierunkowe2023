@@ -48,6 +48,7 @@ void wyswietlListeBezGlowy(struct element *lista)
     if (lista == NULL)
     {
         printf("Lista jest pusta.\n---\n");
+        return;
     }
     struct element *wsk = lista;
     while (wsk != NULL)
