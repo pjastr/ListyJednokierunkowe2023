@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1685172046 source:c:\users\piotrek\documents\listyjednokierunkowe2023\7_3_6\main.c
+	<stdio.h>
+	<stdlib.h>
+
