@@ -9,7 +9,7 @@ struct element
 
 struct element *polacz_listy(struct element *lista1, struct element *lista2)
 {
-    //mocno korzystam z zalozenia ze listy s¹ takiej samej dlugosci
+    //mocno korzystam z zalozenia ze listy sa takiej samej dlugosci
     if (lista1 == NULL)
     {
         return NULL;
@@ -70,6 +70,6 @@ int main()
     wyswietlListeBezGlowy(lista2);
     struct element *lista3 = polacz_listy(lista1, lista2);
     wyswietlListeBezGlowy(lista3);
-    // w tym zadaniu pierwotne listy nie s¹ ju¿ przechowywane nigdzie w pamieci w pierwotnej kolejnosci
+    // w tym zadaniu pierwotne listy nie sa juz przechowywane nigdzie w pamieci w pierwotnej kolejnosci
 }
 
